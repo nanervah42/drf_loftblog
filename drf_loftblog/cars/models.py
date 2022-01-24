@@ -3,7 +3,7 @@ from django.db import models
 User = get_user_model()
 
 class Car(models.Model):
-    vin = models.CharField(verbose_name='Вин', db_index=True, max_length=64)
+    vin = models.CharField(verbose_name='Вин', db_index=True, unique=True, max_length=64)
     color = models.CharField(verbose_name='Цвет', max_length=64)
     brand = models.CharField(verbose_name='Brand', max_length=64)
     CAR_TYPES = (
